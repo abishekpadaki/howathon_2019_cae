@@ -1,10 +1,14 @@
 import React from 'react';
 import Filters from '../../components/Filters';
 import Table from '../../components/Table';
-import { Row, Col } from 'react-bootstrap'
+import { Row, Col } from 'react-bootstrap';
+import BackButton from '../../components/BackButton/index';
+import './styles.css'
 
 const Layout = (props) => {
     return <>
+    <div className="page_div">
+    <BackButton/>
         <Row>
             <Col sm={3}>
                 <Filters {...props} />
@@ -13,6 +17,7 @@ const Layout = (props) => {
                 <Table {...props} />
             </Col>
         </Row>
+        </div>
     </>
 }
 
