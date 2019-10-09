@@ -1,15 +1,15 @@
 import React from 'react';
-import HomePage from './features/homepage';
+import HomePage from './features/HomePage/homepage';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      
         
-        <HomePage/>
+      
         
-      </header>
+      
     </div>
   );
 }
