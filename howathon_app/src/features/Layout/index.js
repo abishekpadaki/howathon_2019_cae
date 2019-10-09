@@ -9,7 +9,7 @@ return <>
             <Col sm={3}> 
                 <Filters  />
             </Col>
-            <Col sm={9}>
+            <Col sm={8}>
                 <Table/>
             </Col>
         </Row>
