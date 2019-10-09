@@ -30,20 +30,6 @@ const Routing = () => {
     });
 
     return (
-<<<<<<< HEAD
-    <Router>
-        <div>
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/layout" render={()=>{
-            return(<Layout/>);
-          }}
-          
-
-        />
-        <Route exact path="/stats" component={StatsTable} />
-        </div>
-    </Router>
-=======
         <Router>
             <div>
                 <Route exact path="/" component={HomePage} />
@@ -51,10 +37,10 @@ const Routing = () => {
                     return (<Layout comp={props.location.state.comp} />);
                 }}
                 />
+                <Route exact path="/stats" component={StatsTable} />
             </div>
             {query}
         </Router>
->>>>>>> 8d58ea8ab6f761026226dd5d1f09635aeaa7540c
     )
 }
 

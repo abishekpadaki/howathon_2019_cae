@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import './styles.css'; 
 
 export default class StatsTable extends React.Component{
     constructor(props){
@@ -8,6 +9,7 @@ export default class StatsTable extends React.Component{
 
     render(){
         return(
+            <div className="stats_div">
             <div className="statsTableCard">
                 <Table striped bordered hover>
   <thead>
@@ -31,6 +33,7 @@ export default class StatsTable extends React.Component{
     
   </tbody>
 </Table>
+            </div>
             </div>
         )
     }
