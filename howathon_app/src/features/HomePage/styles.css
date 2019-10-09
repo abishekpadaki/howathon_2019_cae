@@ -1,0 +1,17 @@
+.homepage_div{
+    text-align: center;
+}
+.padder{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.title_header{
+    text-align: center;
+    padding-top:15px;
+}
+
+.cards_list{
+margin-top: 25px;
+   display: inline-block;
+}
