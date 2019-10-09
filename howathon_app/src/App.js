@@ -5,7 +5,7 @@ import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import Router from './router';
 
-const host = 'http://10.150.208.47:2021/graphql';
+const host = 'http://192.168.43.43:2021/graphql';
 const httpLink = new HttpLink({
   uri: host
 });
@@ -23,7 +23,7 @@ const client = new ApolloClient({
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <Router/>      
+      <Router />
     </ApolloProvider>
   );
 };
