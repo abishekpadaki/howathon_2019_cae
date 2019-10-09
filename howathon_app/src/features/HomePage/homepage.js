@@ -1,7 +1,8 @@
 import React from "react";
 import { Row, Col, Container} from "react-bootstrap";
 import './styles.css';
-import CardComponent from "../../components/Card/index"; 
+import CardComponent from "../../components/Card/index";
+import MainStats from "../../components/MainStats/index"; 
 export default class HomePage extends React.Component {
   
   render() {
@@ -12,6 +13,8 @@ export default class HomePage extends React.Component {
         <h1>Supply Chain Management</h1>
       </div>
       <div className="homepage_div">
+        <Row>
+          <Col xs={12}>
         <div className="cards_list">
           <div className="padder">
           <Row>
@@ -42,6 +45,13 @@ export default class HomePage extends React.Component {
           </Row>
           </div>
         </div>
+        </Col>
+        </Row>
+        <Row>
+          <Col xs={12}>
+        <MainStats numboxes={15} numlocations={8}/>
+        </Col>
+        </Row>
       </div>
       </>
     );

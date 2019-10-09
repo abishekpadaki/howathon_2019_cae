@@ -1,0 +1,15 @@
+.mainstats_card{
+    border-radius: 10px;
+    background-color: #222222;
+    width:75%;
+    display: inline-block;
+}
+
+.statl{
+    background-color: #222222;
+}
+
+.statr{
+    background-color: #222222;
+}
+
