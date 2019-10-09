@@ -1,43 +1,107 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Table } from 'react-bootstrap';
+import useGlobal from '../../store';
+import previousState from '../../utils/previousState';
+import compare from '../../utils/compareObjects';
+import FetchData from '../../graphql/utils';
+import { getBoxHistory } from '../../graphql/queries';
 import './main.css';
 
-const TableComponent = () => {
-    const date = '12-10-2019'
-    const time = '12:12 PM'
-    return <>
-        <div className="label">
-            Position of boxes on {date} at {time}
-        </div>
-        <Table striped bordered hover>
+const TableComponent = (props) => {
+    const [globalState, globalActions] = useGlobal();
+    const { tableQuery } = globalState
+    const { date, time, boxes, box, location } = tableQuery
+    const { comp } = props;
+    const [data, setData] = useState({});
+    const [query, setQuery] = useState(<></>);
+    const prevState = previousState(tableQuery);
+    useEffect(() => {
+        if (!compare(prevState, tableQuery)) {
+            if (comp === 'sc1' || comp === 'sc2') {
+                setQuery(
+                    // FetchData(getLists(), setData, {})
+                );
+            }
+            else if (comp === 'sc3') {
+                setQuery(
+                    FetchData(getBoxHistory, setData, { id: box })
+                );
+            }
+            else {
+                setQuery(
+                    // FetchData(getLists(), setData, {})
+                );
+            }
+        }
+    });
+    let label = ""
+    let thead = <></>
+    let tbody = <></>
+    if (comp === 'sc2' && time !== '') {
+        label = `The location of the selected boxes at ${time}`
+        thead =
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Username</th>
+                    <th>Box</th>
+                    <th>Location</th>
+                    <th>Content</th>
                 </tr>
             </thead>
+        tbody = data.boxHistory ? data.boxHistory.map(h => {
+            return <tr>
+                <td>{h.dateTime} </td>
+                <td>{h.location} </td>
+                <td>{h.components} </td>
+            </tr>
+        }) : <></>
+    }
+    else if (comp === 'sc3' && box) {
+        label = `The timeline of box ${box}`
+        thead =
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Location</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+        tbody = data.boxHistory ? data.boxHistory.map(h => {
+            return <tr>
+                <td>{h.dateTime} </td>
+                <td>{h.location} </td>
+                <td>{h.components} </td>
+            </tr>
+        }) : <></>
+    }
+    else if (comp === 'sc4' && location) {
+        label = `The timeline of location ${location}`
+        thead =
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Box</th>
+                    <th>Content</th>
+                </tr>
+            </thead>
+        tbody = data.boxHistory ? data.boxHistory.map(h => {
+            return <tr>
+                <td>{h.dateTime} </td>
+                <td>{h.location} </td>
+                <td>{h.components} </td>
+            </tr>
+        }) : <></>
+    }
+    return <>
+        <div className="label">
+            {label}
+        </div>
+        <Table striped bordered hover>
+            {thead}
             <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td colSpan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                {tbody}
             </tbody>
         </Table>
+        {query}
     </>
 }
 

@@ -4,7 +4,14 @@ import * as actions from './actions';
 
 const initialState = {
     boxes: [],
-    locations: []
+    locations: [],
+    tableQuery: {
+        date: '',
+        time: '',
+        boxes: '',
+        box: '',
+        location: ''
+    }
 };
 
 const useGlobal = useGlobalHook(React, initialState, actions);

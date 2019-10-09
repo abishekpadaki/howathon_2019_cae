@@ -68,7 +68,6 @@ svg {
 }
 .options {
     position: absolute;
-    top: 100%;
     border: solid #ddd;
     border-width: 0 1px;
     width: 80%;

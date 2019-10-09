@@ -9,7 +9,7 @@ import { getLists } from './graphql/queries';
 import useGlobal from './store';
 
 const Routing = () => {
-    const [globalState, globalActions] = useGlobal();
+    const [, globalActions] = useGlobal();
     const { setLists } = globalActions;
     const [data, setData] = useState({});
     const [query, setQuery] = useState(<></>);
@@ -18,13 +18,13 @@ const Routing = () => {
     useEffect(() => {
         if (onMount.current) {
             setQuery(
-                FetchData(getLists('project env branch brand name url pages{url name}'), setData, {})
+                FetchData(getLists(), setData, {})
             );
             onMount.current = false;
             return;
         }
         if (!compare(prevState, data)) {
-            setLists(data.parameters);
+            setLists(data.list);
         }
     });
 

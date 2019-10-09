@@ -2,9 +2,9 @@ const express = require('express');
 
 const app = express();
 
-app.use(express.static('dist'));
+app.use(express.static('build'));
 app.get('/*', (req, res) => {
-    res.sendFile(`${__dirname}/dist/index.html`);
+    res.sendFile(`${__dirname}/build/index.html`);
 });
 
 const server = app.listen(5000, () => {
