@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './select.css';
+import './main.css';
 // const { string, arrayOf, shape } = PropTypes
 
 export default class Select extends Component {
@@ -338,7 +338,6 @@ export default class Select extends Component {
         onBlur={ this.onBlur }
         onKeyDown={ this.onKeyDown }
       >
-        <label className="label">{ label }</label>
         <div className="selection" onClick={ this.onClick }>
           { this.renderValues() }
           <span className="arrow">

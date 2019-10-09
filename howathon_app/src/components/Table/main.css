@@ -1,0 +1,8 @@
+.table {
+    margin: 3px 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    transition: 0.3s;
+    padding: 12px 2px;
+}
