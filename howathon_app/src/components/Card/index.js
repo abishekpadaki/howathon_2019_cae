@@ -1,22 +1,33 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import { Card } from "react-bootstrap";
 import './styles.css';
 
-const CardComponent=props=>{
-    const {cardtxt, carddesc} =props;
+export default class CardComponent extends React.Component{
+    constructor(props){
+        super(props);
+        
+    }
+    
+      render(){
     return(
-        <div className="custom_card">
+        <>
+        <Link className="custom_card" to="/layout" style={{ textDecoration: 'none' }}>
+       
+            
         <Card style={{ width: "30rem" }}>
                 <Card.Body>
-                  <Card.Title>{cardtxt}</Card.Title>
+                  <Card.Title>{this.props.cardtxt}</Card.Title>
 
                   <Card.Text>
-                    {carddesc}
+                    {this.props.carddesc}
                   </Card.Text>
                 </Card.Body>
               </Card>
-              </div>
+              
+              </Link>
+              </>
     )
+}
 };
 
-export default CardComponent;
