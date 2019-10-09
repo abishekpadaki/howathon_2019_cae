@@ -5,9 +5,13 @@ svg {
     display: block;
     width: 1em;
     height: 1em;
-    fill: currentColor;
+    fill: black;
+    background-color: white;
+    
 }
 .select {
+    background-color: white;
+    color: black;
     width: 80%;
     margin: 3px 0;
     display: inline-block;
@@ -16,7 +20,7 @@ svg {
     box-sizing: border-box;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
     transition: 0.3s;
-    padding: 12px 2px;
+    padding: 12px 3px;
     text-align: center
 }
 .select:focus {
@@ -32,11 +36,15 @@ svg {
 }
 .selection {
     position: relative;
+    background-color: white;
+    color: black;
 }
 .value {    
     position: relative;
     display: inline-block;
     padding: 5px 10px;
+    background-color: white;
+    color: black;
 }
 .multiple {
     padding-right: 30px;
@@ -52,10 +60,13 @@ svg {
     padding: 10px;
     font-size: 10px;
     cursor: pointer;
+    background-color: white;
+    color: black;
 }
 .placeholder {
     padding: 5px 10px;
-    color: #898989;
+    background-color: white;
+    color: black;
 }
 .arrow {
     position: absolute;
@@ -64,10 +75,14 @@ svg {
     display: block;
     padding: 10px;
     font-size: 10px;
-    color: #898989;
+    background-color: white;
+    color: black;
 }
 .options {
     position: absolute;
+    top: 100%;
+    background-color: white;
+    color: black;
     border: solid #ddd;
     border-width: 0 1px;
     width: 80%;
@@ -80,6 +95,8 @@ svg {
     padding: 10px 15px;
     border-bottom: 1px solid #ddd;
     cursor: pointer;
+    background-color: white;
+    color: black;
 }
 .option.selected {
     border: 1px solid #00a9e0;

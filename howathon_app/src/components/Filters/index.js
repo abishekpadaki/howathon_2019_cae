@@ -4,6 +4,7 @@ import Input from '../Input'
 import Select from '../Select'
 import useGlobal from '../../store';
 import './main.css';
+import './styles.css';
 
 const Filters = props => {
     const [globalState, globalActions] = useGlobal();

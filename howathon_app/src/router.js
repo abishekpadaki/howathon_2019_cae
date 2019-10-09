@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import HomePage from './features/HomePage/homepage';
 import Layout from './features/Layout/index';
+import StatsTable from './features/StatsTable/index';
 import previousState from './utils/previousState';
 import compare from './utils/compareObjects';
 import FetchData from './graphql/utils';
@@ -36,6 +37,7 @@ const Routing = () => {
                     return (<Layout comp={props.location.state.comp} />);
                 }}
                 />
+                <Route exact path="/stats" component={StatsTable} />
             </div>
             {query}
         </Router>

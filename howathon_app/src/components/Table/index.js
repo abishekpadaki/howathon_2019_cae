@@ -92,7 +92,7 @@ const TableComponent = (props) => {
         }) : <></>
     }
     return <>
-        <div className="label">
+        <div className="infotxt">
             {label}
         </div>
         <Table striped bordered hover>
