@@ -52,7 +52,7 @@ export default class HomePage extends React.Component {
           </Row>
           <Row>
             <Col xs={12}>
-              <MainStats numboxes={15} numlocations={8} />
+              <MainStats numboxes={9} numlocations={5} />
             </Col>
           </Row>
         </div>

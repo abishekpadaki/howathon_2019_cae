@@ -5,7 +5,7 @@ import previousState from '../../utils/previousState';
 import compare from '../../utils/compareObjects';
 import { epochToTime } from '../../utils/timeConversions'
 import FetchData from '../../graphql/utils';
-import { getBoxHistory, getLocationHistory } from '../../graphql/queries';
+import { getBoxHistory, getLocationHistory, getLocationOfBoxes } from '../../graphql/queries';
 import './main.css';
 
 const TableComponent = (props) => {
@@ -19,8 +19,9 @@ const TableComponent = (props) => {
     useEffect(() => {
         if (!compare(prevState, tableQuery)) {
             if (comp === 'sc1' || comp === 'sc2') {
+                console.log(date, boxes)
                 setQuery(
-                    // FetchData(getLists(), setData, {})
+                    FetchData(getLocationOfBoxes, setData, { ids: boxes, dateTime: date.toString() })
                 );
             }
             else if (comp === 'sc3') {
@@ -39,21 +40,23 @@ const TableComponent = (props) => {
     let thead = <></>
     let tbody = <></>
     let timeLine = <></>
-    if (comp === 'sc2' && time !== '') {
-        label = `The location of the selected boxes at ${time}`
+    if (comp === 'sc2' || comp === 'sc1') {
+        label = `The location of the selected boxes at selected time`
         thead =
             <thead>
                 <tr>
                     <th>Box</th>
                     <th>Location</th>
                     <th>Content</th>
+                    <th>Boxes</th>
                 </tr>
             </thead>
-        tbody = data.boxHistory ? data.boxHistory.map(h => {
+        tbody = data.boxList ? data.boxList.map(h => {
             return <tr>
-                <td>{epochToTime(h.dateTime)} </td>
+                <td>{h.boxId} </td>
                 <td>{h.location} </td>
                 <td>{h.components} </td>
+                <td>{h.boxes} </td>
             </tr>
         }) : <></>
     }
@@ -65,6 +68,7 @@ const TableComponent = (props) => {
                     <th>Time</th>
                     <th>Location</th>
                     <th>Content</th>
+                    <th>Boxes</th>
                 </tr>
             </thead>
         tbody = data.boxHistory ? data.boxHistory.map(h => {
@@ -72,6 +76,7 @@ const TableComponent = (props) => {
                 <td>{epochToTime(h.dateTime)} </td>
                 <td>{h.location} </td>
                 <td>{h.components} </td>
+                <td>{h.boxes} </td>
             </tr>
         }) : <></>
         timeLine = data.boxHistory ? data.boxHistory.map((h, i) => {
@@ -93,6 +98,7 @@ const TableComponent = (props) => {
                     <th>Time</th>
                     <th>Box</th>
                     <th>Content</th>
+                    <th>Boxes</th>
                 </tr>
             </thead>
         tbody = data.locationHistory ? data.locationHistory.map(h => {
@@ -100,6 +106,7 @@ const TableComponent = (props) => {
                 <td>{epochToTime(h.dateTime)} </td>
                 <td>{h.id} </td>
                 <td>{h.components} </td>
+                <td>{h.boxes} </td>
             </tr>
         }) : <></>
 

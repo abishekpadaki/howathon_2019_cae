@@ -14,15 +14,15 @@ export default class MainStats extends React.Component {
 
                 <div className="mainstats_card flex-container">
 
-                    <Link className="statl col-sm-6" to="" style={{ textDecoration: 'none' }}>
+                    <div className="statl col-sm-6" to="" style={{ textDecoration: 'none' }}>
                         <h3 className="txtcol">Number Of Boxes</h3>
                         <h2 className="numcol">{this.props.numboxes}</h2>
-                    </Link>
+                    </div>
 
-                    <Link className="statr col-sm-6" to="   " style={{ textDecoration: 'none' }}>
+                    <div className="statr col-sm-6" to="" style={{ textDecoration: 'none' }}>
                         <h3 className="txtcol">Number Of Locations</h3>
                         <h2 className="numcol">{this.props.numlocations}</h2>
-                    </Link>
+                    </div>
 
                 </div>
             </div>

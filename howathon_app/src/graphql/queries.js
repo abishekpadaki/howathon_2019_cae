@@ -34,4 +34,15 @@ const getLocationHistory = gql`
   }
 `;
 
-export { getLists, getBoxHistory, getLocationHistory }
+const getLocationOfBoxes = gql`
+  query Boxes($ids:[String], $dateTime: String) {
+    boxList(ids: $ids, dateTime: $dateTime){
+      dateTime
+      location
+      components
+      boxes
+      boxId
+    }
+  }
+`;
+export { getLists, getBoxHistory, getLocationHistory, getLocationOfBoxes }
