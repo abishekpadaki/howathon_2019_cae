@@ -1,32 +1,31 @@
-import React, {useState, useEffect } from 'react';
-// import HomePage from './features/homepage';
-import './App.css';
-import Select from './select';
+import React from 'react';
+import { ApolloProvider } from 'react-apollo';
+import { ApolloClient } from 'apollo-client';
+import { HttpLink } from 'apollo-link-http';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import Router from './router';
 
-function App() {
-  const [values, setValues] = useState([])
-  useEffect(()=>{
-    console.log(values)
-  })
+const host = 'http://10.150.16.118:3490/graphql';
+const httpLink = new HttpLink({
+  uri: host
+});
+
+const cache = new InMemoryCache();
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache
+});
+
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">        
-        <div>
-      <Select
-        setValues={setValues}
-        label="React Multiple Select"
-        placeholder="Pick some"
-        options={[
-          { value: 'Rock' },
-          { value: 'Paper' },
-          { value: 'Scissors' }
-        ]}
-        multiple
-      />
-    </div>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <Router/>      
+    </ApolloProvider>
   );
-}
+};
 
 export default App;

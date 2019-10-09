@@ -1,4 +1,4 @@
-.custom-input{
+.dateInput{
     width: 80%;
     margin: 3px 0;
     display: inline-block;
@@ -7,29 +7,15 @@
     box-sizing: border-box;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
     transition: 0.3s;
-}
-.datalistInput{
-    @extend .custom-input;
-    padding: 12px 18px;
-}
-.dateInput{
-    @extend .custom-input;
     padding: 12px 2px;
     text-align: center
 }
-.pagelistInput{
-    @extend .custom-input;
-    padding: 12px 18px;
-}
-@media only screen and (max-width: 601px) {
-    .pagelistInput{
-        width: 90%;
-    }
-}
+
 input[type=date]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     display: none;
 }
+
 input[type=date]::-webkit-clear-button
 {
     display: none; /* Hide the button */
