@@ -1,5 +1,6 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
+import BackButton from '../../components/BackButton/index';
 import './styles.css'; 
 
 export default class StatsTable extends React.Component{
@@ -9,6 +10,8 @@ export default class StatsTable extends React.Component{
 
     render(){
         return(
+            <>
+            <BackButton/>
             <div className="stats_div">
             <div className="statsTableCard">
                 <Table striped bordered hover>
@@ -35,6 +38,7 @@ export default class StatsTable extends React.Component{
 </Table>
             </div>
             </div>
+            </>
         )
     }
 }
