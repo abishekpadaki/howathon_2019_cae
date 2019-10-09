@@ -5,4 +5,31 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
     transition: 0.3s;
     padding: 12px 2px;
+    background-color : white;
+    color: black; 
+}
+
+th{
+    background-color : white;
+    color: black; 
+}
+
+tbody{
+    background-color : white;
+    color: black; 
+}
+thead{
+    background-color : white;
+    color: black; 
+}
+
+td{
+    background-color : white;
+    color: black; 
+}
+
+
+tr{
+    background-color : white;
+    color: black; 
 }

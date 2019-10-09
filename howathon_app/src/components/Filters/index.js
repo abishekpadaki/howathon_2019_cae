@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Input from '../Input'
 import Select from '../Select'
+import './styles.css';
 
 const Filters = props => {
     const { comp } = props;
@@ -66,13 +67,15 @@ const Filters = props => {
     else content = <>
         <div className="label">Select a Location</div>
         <Select
+       
             setValues={setValues}
             // label="Select Boxes"
             placeholder="Pick some"
             options={[
                 { value: 'Box 1' },
                 { value: 'Box 2' },
-                { value: 'Box 3' }
+                { value: 'Box 3' },
+                { value: 'Box 4' }
             ]}
             multiple
         >

@@ -6,7 +6,7 @@ const TableComponent = () => {
     const date = '12-10-2019'
     const time = '12:12 PM'
     return <>
-        <div className="label">
+        <div className="infotxt">
             Position of boxes on {date} at {time}
         </div>
         <Table striped bordered hover>

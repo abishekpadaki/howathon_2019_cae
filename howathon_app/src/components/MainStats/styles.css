@@ -1,8 +1,10 @@
 .mainstats_card{
-    border-radius: 10px;
+    padding:15px;
     background-color: #222222;
-    width:75%;
-    display: inline-block;
+    width:70%;
+    margin:auto;
+    text-align: center;
+    
 }
 
 .statl{
@@ -11,5 +13,25 @@
 
 .statr{
     background-color: #222222;
+    border-left: 2px solid white;
 }
 
+.txtcol{
+    background-color: #222222;
+    
+}
+
+.flex-container{
+    display: flex;
+  justify-content: center;
+}
+
+.numcol{
+    background-color: #222222;
+    color: #F39C12;
+
+}
+
+.mainstats_div{
+    margin-top:25px;
+}
