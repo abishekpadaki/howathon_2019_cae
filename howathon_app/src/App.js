@@ -1,5 +1,5 @@
 import React from 'react';
-import DummyComponent from './components/dummy';
+import HomePage from './features/homepage';
 import './App.css';
 
 function App() {
@@ -7,7 +7,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         
-        <DummyComponent/>
+        <HomePage/>
         
       </header>
     </div>
