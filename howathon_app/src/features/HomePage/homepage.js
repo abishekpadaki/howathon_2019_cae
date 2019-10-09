@@ -19,12 +19,12 @@ export default class HomePage extends React.Component {
           <div className="padder">
           <Row>
             <Col xs={6}>
-            <CardComponent cardtxt={"Current Location of Boxes"} carddesc={"Display the current locations of the boxes."}>
+            <CardComponent cardtxt={"Current Location of Boxes"} carddesc={"Display the current locations of the boxes."} comp={"sc1"}>
                 
                 </CardComponent>
             </Col>
             <Col xs={6}>
-              <CardComponent cardtxt={"Location of Boxes at a Given Time"} carddesc={"Display the locations of the boxes at a given time."}>
+              <CardComponent cardtxt={"Location of Boxes at a Given Time"} carddesc={"Display the locations of the boxes at a given time."} comp={"sc2"}>
                 
               </CardComponent>
             </Col>
@@ -33,13 +33,16 @@ export default class HomePage extends React.Component {
           <div className="padder">
           <Row>
             <Col xs={6}>
-              <CardComponent cardtxt={"Timeline of a Box"} carddesc={"Display the timeline of a particular box"}>
+              <CardComponent cardtxt={"Timeline of a Box"} carddesc={"Display the timeline of a particular box"} comp={"sc3"}>
                 
               </CardComponent>
             </Col>
             <Col xs={6}>
-              <CardComponent cardtxt={"Timeline of a Location in the Warehouse"} carddesc={"Display the events of a location in the warehouse."}>
-                
+              <CardComponent 
+                cardtxt={"Timeline of a Location in the Warehouse"}
+                carddesc={"Display the events of a location in the warehouse."}
+                comp={"sc4"}
+              >
               </CardComponent>
             </Col>
           </Row>
