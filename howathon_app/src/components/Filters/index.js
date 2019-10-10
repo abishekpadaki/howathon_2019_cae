@@ -19,7 +19,16 @@ const Filters = props => {
         box: '',
         location: ''
     });
-    console.log(values)
+    // const currdate= new Date();
+    // // const currtime = '12:12'; 
+    // var currtime= currdate.getHours() + ":" + currdate.getMinutes() ;
+    // console.log(currdate)
+    var today = new Date();
+var currdate = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+var currtime = "0"+today.getHours() + ":" + today.getMinutes();
+// var currtime='07:25';
+console.log(currdate);
+console.log(currtime);
     // const prevState = previousState(values);
     // useEffect(() => {
     //     if (!compare(prevState, values))
@@ -28,7 +37,35 @@ const Filters = props => {
     //         });
     // });
     let content = <></>
-    if (comp === 'sc1' || comp === 'sc2')
+    if (comp === 'sc1')
+        content = <>
+            <div className="label">Date</div>
+            <Input
+                className="dateInput"
+                type='date'
+               value={currdate}
+            />
+            <div className="label">Time</div>
+            <Input
+                className="dateInput"
+                type='time'
+                value={currtime}
+            />
+            <div className="label">Select Boxes</div>
+            <Select
+                setValues={value => {
+                    setValues({
+                        ...values,
+                        boxes: value
+                    })
+                }}
+                placeholder="Pick some"
+                options={boxes}
+                multiple
+            >
+            </Select>
+        </>
+    else if (comp === 'sc2')
         content = <>
             <div className="label">Date</div>
             <Input
@@ -46,7 +83,8 @@ const Filters = props => {
                 className="dateInput"
                 type='time'
                 onChange={value => {
-                    setValues({
+
+                  setValues({
                         ...values,
                         time: value
                     })
