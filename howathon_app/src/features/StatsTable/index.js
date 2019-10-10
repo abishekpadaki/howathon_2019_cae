@@ -1,12 +1,12 @@
 import React from 'react';
 import Table from 'react-bootstrap/Table';
 import BackButton from '../../components/BackButton/index';
-import './styles.css'; 
+import './styles.css';
 
-export default class StatsTable extends React.Component{
-    constructor(props){
-        super(props);
-    }
+export default class StatsTable extends React.Component {
+  constructor(props) {
+    super(props);
+  }
 
     render(){
         return(
@@ -74,3 +74,4 @@ export default class StatsTable extends React.Component{
         )
     }
 }
+  

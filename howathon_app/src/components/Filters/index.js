@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Input from '../Input'
 import Select from '../Select'
 import useGlobal from '../../store';
 import './main.css';
-import './styles.css';
 
 const Filters = props => {
     const [globalState, globalActions] = useGlobal();
@@ -97,6 +97,9 @@ const Filters = props => {
     </>
     return (
         <>
+            <Link className="backButton" to={'/'}>
+                {'<'}
+            </Link>
             <div style={{ textAlign: 'center' }}>
                 {content}
                 <Button
